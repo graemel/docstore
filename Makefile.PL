@@ -12,12 +12,18 @@ all_from 'lib/DocStore.pm';
 requires 'Catalyst::Runtime' => '5.90006';
 requires 'Catalyst::Plugin::ConfigLoader';
 requires 'Catalyst::Plugin::Static::Simple';
+requires 'Catalyst::Plugin::StackTrace';
 requires 'Catalyst::Action::RenderView';
+requires 'Catalyst::Model::DBIC::Schema';
+requires 'DBD::mysql';
+requires 'Lingua::EN::Sentence';
 requires 'Moose';
+requires 'Catalyst::View::TT';
 requires 'namespace::autoclean';
 requires 'Config::General'; # This should reflect the config file format you've chosen
                  # See Catalyst::Plugin::ConfigLoader for supported formats
 test_requires 'Test::More' => '0.88';
+test_requires 'Test::WWW::Mechanize::Catalyst';
 catalyst;
 
 install_script glob('script/*.pl');

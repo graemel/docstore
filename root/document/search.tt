@@ -1,0 +1,9 @@
+<span class="search">Your search for [% search_term %] returned [% results.size %] results</span>
+
+<ul class="search_results">
+[% FOREACH sentence IN results %]
+	<li><strong><a href="/view/[%= sentence.document.id %]">[% sentence.document.name %]</a></strong>
+		<p>[% sentence.previous.content %] <i>[% sentence.content %]</i> [% sentence.next.content %]</p>
+	</li>
+[% END %]
+</ul>

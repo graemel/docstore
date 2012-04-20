@@ -1,0 +1,7 @@
+<h1>Welcome to the Document Store</h1>
+
+[% FOREACH doc IN docs %]
+
+<a href="/view/[%= doc.id %]">[% doc.name %]</a><br/>
+
+[% END %]

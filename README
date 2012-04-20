@@ -1,1 +1,23 @@
-Run script/docstore_server.pl to test the application.
+Document Storage
+
+Document Storage is a sample application and not intended for actual use. The project uses the Catalyst MVC framework
+to archive text based documents.
+
+Documents are stored in two database tables one containing the entire document and the other containing the split up
+sentences from the document. Searching the documents is provided via MySQL's full text search functionality.
+
+MySQLs full text search was selected as the remit was to upload the sentences individually to a database, however
+I'd be far more likely to use a third party full text searching system such as Lucene or Sphinx due to their
+enhanced indexing and search functionalities. 
+
+As the sample files do not contain Byte Order Marks the encoding has been detected using the header included in the
+file.
+
+In order to get the project running locally create a database and enter the credentials to connect to the db in 
+docstore.conf in the root of the project and run the migration in the migrations folder. Run "perl Makefile.PL" 
+and "make". You should then be able to run "perl script/docstore_server.pl" from the command line. Connect to the 
+server via http://localhost:3000/
+
+The Tests are far from functionally complete but are there simply to prove the concept. To run them use 
+"prove -Ilib t".
+

@@ -20,19 +20,6 @@ DocStore::Controller::Root - Root Controller for DocStore
 
 =head1 METHODS
 
-=head2 index
-
-The root page (/)
-
-=cut
-
-sub index :Path :Args(0) {
-    my ( $self, $c ) = @_;
-
-    # Hello World
-    $c->response->body( $c->welcome_message );
-}
-
 =head2 default
 
 Standard 404 error page
